@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views>
+    <views>
+        <view>
+            <ID>14</ID>
+            <post_content>[wpv-filter-meta-html]
+[wpv-layout-meta-html]</post_content>
+            <post_title>Did you knows</post_title>
+            <post_name>did-you-knows</post_name>
+            <post_excerpt></post_excerpt>
+            <post_type>view</post_type>
+            <post_status>publish</post_status>
+            <meta>
+                <_wpv_settings>
+                    <view-query-mode>normal</view-query-mode>
+                    <view_description></view_description>
+                    <view_purpose>all</view_purpose>
+                    <query_type>
+                        <state>posts</state>
+                    </query_type>
+                    <post_type_dont_include_current_page>1</post_type_dont_include_current_page>
+                    <taxonomy_hide_empty>1</taxonomy_hide_empty>
+                    <taxonomy_include_non_empty_decendants>1</taxonomy_include_non_empty_decendants>
+                    <taxonomy_pad_counts>1</taxonomy_pad_counts>
+                    <orderby>rand</orderby>
+                    <order>DESC</order>
+                    <orderby_second></orderby_second>
+                    <order_second>DESC</order_second>
+                    <taxonomy_orderby>name</taxonomy_orderby>
+                    <taxonomy_order>DESC</taxonomy_order>
+                    <users_orderby>user_login</users_orderby>
+                    <users_order>ASC</users_order>
+                    <limit>-1</limit>
+                    <offset>0</offset>
+                    <taxonomy_limit>-1</taxonomy_limit>
+                    <taxonomy_offset>0</taxonomy_offset>
+                    <users_limit>-1</users_limit>
+                    <users_offset>0</users_offset>
+                    <pagination>
+                        <type>disabled</type>
+                        <posts_per_page>10</posts_per_page>
+                        <effect>fade</effect>
+                        <duration>500</duration>
+                        <speed>5</speed>
+                        <preload_images>1</preload_images>
+                        <cache_pages>1</cache_pages>
+                        <preload_pages>1</preload_pages>
+                        <pre_reach>1</pre_reach>
+                        <spinner>default</spinner>
+                        <spinner_image>https://www.nationalfruitatworkday.com/wp-content/plugins/wp-views/embedded/res/img/ajax-loader.gif</spinner_image>
+                        <spinner_image_uploaded></spinner_image_uploaded>
+                        <callback_next></callback_next>
+                    </pagination>
+                    <filter_meta_html>[wpv-filter-start hide=&quot;false&quot;]
+[wpv-filter-controls][/wpv-filter-controls]
+[wpv-filter-end]</filter_meta_html>
+                    <filter_meta_html_css></filter_meta_html_css>
+                    <filter_meta_html_js></filter_meta_html_js>
+                    <layout_meta_html_state>
+                        <html>on</html>
+                        <css>off</css>
+                        <js>off</js>
+                        <img>off</img>
+                    </layout_meta_html_state>
+                    <layout_meta_html_css></layout_meta_html_css>
+                    <layout_meta_html_js></layout_meta_html_js>
+                    <sections-show-hide>
+                        <pagination>off</pagination>
+                        <filter-extra-parametric>off</filter-extra-parametric>
+                        <filter-extra>off</filter-extra>
+                    </sections-show-hide>
+                    <orderby_as></orderby_as>
+                    <taxonomy_orderby_as></taxonomy_orderby_as>
+                    <users_orderby_as></users_orderby_as>
+                    <post_types>
+                        <post_type>did-you-know</post_type>
+                    </post_types>
+                    <taxonomy_types>
+                        <taxonomy_type>category</taxonomy_type>
+                    </taxonomy_types>
+                    <roles_types>
+                        <roles_type>administrator</roles_type>
+                    </roles_types>
+                </_wpv_settings>
+                <_wpv_layout_settings>
+                    <additional_js></additional_js>
+                    <layout_meta_html>[wpv-layout-start]
+	[wpv-items-found]
+&lt;figure class=&quot;wcag-carousel-wrapper&quot;&gt;
+		&lt;div id=&quot;c&quot; class=&quot;wcag-carousel&quot;&gt;
+			&lt;ul class=&quot;wcag-slides&quot;&gt;
+	&lt;!-- wpv-loop-start --&gt;
+		&lt;wpv-loop&gt;
+          [wpv-post-body view_template=&quot;did-you-know&quot;]
+		&lt;/wpv-loop&gt;
+	&lt;!-- wpv-loop-end --&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+&lt;/figure&gt;
+	[/wpv-items-found]
+	[wpv-no-items-found]
+		&lt;strong&gt;[wpml-string context=&quot;wpv-views&quot;]No items found[/wpml-string]&lt;/strong&gt;
+	[/wpv-no-items-found]
+[wpv-layout-end]</layout_meta_html>
+                    <included_ct_ids>Did you know</included_ct_ids>
+                </_wpv_layout_settings>
+            </meta>
+        </view>
+    </views>
+</views>
