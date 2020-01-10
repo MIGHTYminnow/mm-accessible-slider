@@ -12,10 +12,16 @@
     </settings>
     <types>
         <type>
+            <_builtin></_builtin>
+            <_toolset_edit_last>1574294279</_toolset_edit_last>
+            <_wpcf_author_id>4</_wpcf_author_id>
+            <__types_id>did-you-know</__types_id>
+            <__types_title>WSPEHSU Slides</__types_title>
+            <wpcf-post-type>did-you-know</wpcf-post-type>
             <icon>info</icon>
             <labels>
-                <name>Did you knows</name>
-                <singular_name>Did you know</singular_name>
+                <name>WSPEHSU Slides</name>
+                <singular_name>WSPEHSU Slide</singular_name>
                 <add_new>Add New</add_new>
                 <add_new_item>Add New %s</add_new_item>
                 <edit_item>Edit %s</edit_item>
@@ -35,6 +41,7 @@
             <menu_position></menu_position>
             <supports>
                 <title>1</title>
+                <editor>1</editor>
                 <thumbnail>1</thumbnail>
             </supports>
             <rewrite>
@@ -57,17 +64,11 @@
             <query_var></query_var>
             <permalink_epmask>EP_PERMALINK</permalink_epmask>
             <rest_base></rest_base>
-            <wpcf-post-type></wpcf-post-type>
-            <_builtin></_builtin>
-            <_toolset_edit_last>1569267492</_toolset_edit_last>
-            <_wpcf_author_id>1</_wpcf_author_id>
             <is_repeating_field_group></is_repeating_field_group>
             <is_intermediary_post_type></is_intermediary_post_type>
             <id>did-you-know</id>
-            <__types_id>did-you-know</__types_id>
-            <__types_title>Did you knows</__types_title>
-            <hash>5ffbae8acbd8d2130fa25aa3a0053427</hash>
-            <checksum>5ffbae8acbd8d2130fa25aa3a0053427</checksum>
+            <hash>e7fccf192a9e56314559b0dd32befca6</hash>
+            <checksum>e7fccf192a9e56314559b0dd32befca6</checksum>
         </type>
     </types>
 </types>

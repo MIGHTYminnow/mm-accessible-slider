@@ -34,7 +34,7 @@ body{
 	position: relative;
 	left: 50%;
 	width: 100vw;
-	height: 800px;
+	height: 600px;
 	transform: translate( -50%, 0 );
 }
 .wcag-carousel ul {
@@ -65,7 +65,7 @@ body{
 .btn-next {
 	position:absolute;
 	z-index: 700;
-	top: 50%;
+	top: 40%;
 	margin-top: -2.5em;
 	border:0;
 	background: rgba(255,255,255,.6);
@@ -117,8 +117,10 @@ body{
 	opacity: 1;
 }
 .slidenav button.current {
-	border-radius: .5em;
-	border: 4px solid #E4003A;
+	border: 2px solid #ccc;
+}
+.slidenav button{
+	padding: 0;
 }
 .slidenav button{
 	width: auto;
@@ -149,8 +151,10 @@ body{
 	font: 600 26px/30px 'Open Sans';
 }
 .dyk-image img{
-	width: 100%;
-	height: 200px;
+	width: auto;
+	height: 350px !important;
+	margin: 0 auto !important;
+	display: block;
 	object-fit: contain;
 }
 
@@ -186,7 +190,7 @@ body{
 
 @media( min-width: 768px ) {
 	.wcag-carousel {
-		height: 850px;
+		height: 650px;
 	}
 	.dyk-info,
 	.dyk-image{
@@ -216,7 +220,7 @@ body{
 
 @media( min-width: 1280px ) {
 	.wcag-carousel {
-		height: 700px;
+		height: 500px;
 	}
 	.dyk{
 		max-width: 1140px;
