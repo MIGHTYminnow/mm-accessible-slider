@@ -7,8 +7,9 @@
  * Author URI: https://mightyminnow.com
  */
 
-add_action( 'wp_enqueue_scripts', function(){
-	$dir_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'mm-accessible-slider', "{$dir_url}mm-accessible-slider.css", array(), '1.0-beta' );
-	wp_enqueue_script( 'mm-accessible-slider', "{$dir_url}mm-accessible-slider.js", array( 'jquery' ), '1.0-beta', true );
-});
+define( 'MM_ACCESSIBLE_SLIDER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'MM_ACCESSIBLE_SLIDER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+require_once( MM_ACCESSIBLE_SLIDER_PLUGIN_DIR . 'includes/class-mm-accessible-slider.php' );
+
+MM_Accessible_Slider::init();
