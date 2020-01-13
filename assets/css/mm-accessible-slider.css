@@ -1,3 +1,12 @@
+.mm-accessible-slider button{
+	z-index: 2;
+	position: relative;
+	background: red;
+}
+.mm-accessible-slider button img{
+	z-index: -1;
+	position: relative;
+}
 .mm-accessible-slider .slide a {
     background-color: #058588;
     color: #fff;
