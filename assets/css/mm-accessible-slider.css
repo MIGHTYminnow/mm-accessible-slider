@@ -125,6 +125,12 @@ body{
 	display:inline-block;
 	margin: 0 .5em .2em;
 }
+.mm-accessible-slider .slidenav li:first-child{
+	position: absolute;
+	top: -999999999px;
+	left: -999999999px;
+	visibility: hidden;
+}
 .mm-accessible-slider .slidenav button {
 	background: #FFF;
 	border: 2px solid #CCC;

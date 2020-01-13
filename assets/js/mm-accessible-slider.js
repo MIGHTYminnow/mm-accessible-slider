@@ -168,7 +168,7 @@ var myCarousel = (function() {
 		setSlides(index);
 
 		if (settings.startAnimated) {
-			timer = setTimeout(nextSlide, 5000);
+			timer = setTimeout(nextSlide, 3000);
 		}
 	}
 
@@ -237,7 +237,7 @@ var myCarousel = (function() {
 		setSlides(new_current, false, 'prev', announceItem);
 
 		if (settings.animate) {
-			timer = setTimeout(nextSlide, 5000);
+			timer = setTimeout(nextSlide, 3000);
 		}
 
 	}
@@ -268,7 +268,7 @@ var myCarousel = (function() {
 	function startAnimation() {
 		settings.animate = true;
 		animationSuspended = false;
-		timer = setTimeout(nextSlide, 5000);
+		timer = setTimeout(nextSlide, 3000);
 		_this = carousel.querySelector('[data-action]');
 		_this.innerHTML = '<span class="visuallyhidden">Stop Animation </span>￭';
 		_this.setAttribute('data-action', 'stop');
@@ -292,9 +292,4 @@ var myCarousel = (function() {
 	};
 });
 var c = new myCarousel();
-c.init({
-	id: 'c',
-	slidenav: true,
-	animate: true,
-	startAnimated: true
-});
+c.init( MMAS.settings );
