@@ -192,10 +192,10 @@ var myCarousel = (function() {
 		start:startAnimation
 	};
 });
-if ( jQuery( '#c' ).size() > 0 ) {
-	var c = new myCarousel();
-	c.init({
-		id: 'c',
-		slidenav: true,
-	});
-}
+
+jQuery(document).ready(function($){
+	if ( jQuery( '#c' ).size() > 0 ) {
+		var c = new myCarousel();
+		c.init( MMAS.settings );
+	}
+});
