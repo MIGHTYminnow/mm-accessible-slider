@@ -90,7 +90,7 @@ var myCarousel = (function() {
 			carousel.className = 'active wcag-carousel with-slidenav';
 			carousel.appendChild(slidenav);
 			jQuery( '.wcag-carousel .slidenav' ).on( 'click', 'button', function(){
-				var slide = $(this).data('slide');
+				var slide = jQuery(this).data('slide');
 				if ( typeof slide !== 'undefined' ) {
 					stopAnimation();
 					setSlides( slide, true );
@@ -113,7 +113,7 @@ var myCarousel = (function() {
 		setSlides(index);
 
 		jQuery( '.wcag-carousel button' ).on( 'click', function(){
-			clickedBtn = $(this);
+			clickedBtn = jQuery(this);
 			clickedBtn.focus();
 		});
 	}
