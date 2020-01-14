@@ -168,7 +168,7 @@ var myCarousel = (function() {
 		setSlides(index);
 
 		if (settings.startAnimated) {
-			timer = setTimeout(nextSlide, 3000);
+			timer = setTimeout(nextSlide, settings.delay);
 		}
 	}
 
@@ -237,7 +237,7 @@ var myCarousel = (function() {
 		setSlides(new_current, false, 'prev', announceItem);
 
 		if (settings.animate) {
-			timer = setTimeout(nextSlide, 3000);
+			timer = setTimeout(nextSlide, settings.delay);
 		}
 
 	}
@@ -271,7 +271,7 @@ var myCarousel = (function() {
 		if ( settings.startAnimated ) {
 			settings.animate = true;
 			animationSuspended = false;
-			timer = setTimeout(nextSlide, 3000);
+			timer = setTimeout(nextSlide, settings.delay);
 			_this = carousel.querySelector('[data-action]');
 			_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
 			_this.setAttribute('data-action', 'stop');

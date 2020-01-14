@@ -20,6 +20,7 @@ class MM_Accessible_Slider {
 			'slidenav' => (boolean) get_option( 'mmas_thumb_nav', 1 ),
 			'animate' => $autoplay,
 			'startAnimated' => $autoplay,
+			'delay' => absint( get_option( 'mmas_delay', 8000 ) ),
 		) ) );
 	}
 }
