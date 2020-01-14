@@ -49,6 +49,86 @@ class MMAS_Customizer {
 			'type' => 'number',
 			'settings' => 'mmas_delay',
 		) );
+
+		$wp_customize->add_setting( 'mmas_bg', array(
+			'default' => '#f5f5f5',
+			'type' => 'option',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'mmas_bg_control',
+			array(
+				'label' => __( 'Background Color', 'mmas' ),
+				'section' => 'mmas_section',
+				'settings' => 'mmas_bg',
+			)
+		) );
+
+		$wp_customize->add_setting( 'mmas_button_bg', array(
+			'default' => '#058588',
+			'type' => 'option',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'mmas_button_bg_control',
+			array(
+				'label' => __( 'Button Background Color', 'mmas' ),
+				'section' => 'mmas_section',
+				'settings' => 'mmas_button_bg',
+			)
+		) );
+
+		$wp_customize->add_setting( 'mmas_button_color', array(
+			'default' => '#FFFFFF',
+			'type' => 'option',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'mmas_button_color_control',
+			array(
+				'label' => __( 'Button Text Color', 'mmas' ),
+				'section' => 'mmas_section',
+				'settings' => 'mmas_button_color',
+			)
+		) );
+
+		$wp_customize->add_setting( 'mmas_button_hover_bg', array(
+			'default' => '#262626',
+			'type' => 'option',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'mmas_button_hover_bg_control',
+			array(
+				'label' => __( 'Button Hover Background Color', 'mmas' ),
+				'section' => 'mmas_section',
+				'settings' => 'mmas_button_hover_bg',
+			)
+		) );
+
+		$wp_customize->add_setting( 'mmas_button_hover_color', array(
+			'default' => '#FFFFFF',
+			'type' => 'option',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize,
+			'mmas_button_hover_color_control',
+			array(
+				'label' => __( 'Button Hover Text Color', 'mmas' ),
+				'section' => 'mmas_section',
+				'settings' => 'mmas_button_hover_color',
+			)
+		) );
 	}
 
 	public static function sanitize_checkbox( $checked ) {

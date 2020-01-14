@@ -6,6 +6,7 @@ class MM_Accessible_Slider {
 		MMAS_Customizer::init();
 
 		add_action( 'wp_enqueue_scripts', array( 'MM_Accessible_Slider', 'enqueue_assets' ) );
+		add_action( 'wp_get_custom_css', array( 'MM_Accessible_Slider', 'print_custom_styles' ), 10, 2 );
 	}
 
 	public static function enqueue_assets() {
@@ -22,5 +23,26 @@ class MM_Accessible_Slider {
 			'startAnimated' => $autoplay,
 			'delay' => absint( get_option( 'mmas_delay', 8000 ) ),
 		) ) );
+	}
+
+	public static function print_custom_styles( $css, $stylesheet ) {
+		ob_start();
+		?>
+		.mm-accessible-slider .dyk {
+			background: <?php echo get_option( 'mmas_bg', '#f5f5f5' ); ?>; 
+		}
+		.mm-accessible-slider .dyk a{
+			color: <?php echo get_option( 'mmas_button_color', '#FFFFFF' ); ?>;
+			background: <?php echo get_option( 'mmas_button_bg', '#058588' ); ?>;
+		}
+		.mm-accessible-slider .dyk a:hover,
+		.mm-accessible-slider .dyk a:focus{
+			color: <?php echo get_option( 'mmas_button_hover_color', '#FFFFFF' ); ?>;
+			background: <?php echo get_option( 'mmas_button_hover_bg', '#262626' ); ?>;
+		}
+		<?php
+		$css .= ob_get_clean();
+
+		return $css;
 	}
 }
