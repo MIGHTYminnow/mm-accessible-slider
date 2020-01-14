@@ -65,10 +65,10 @@ var myCarousel = (function() {
 
 		ctrls.className = 'controls';
 		ctrls.innerHTML = '<li>' +
-				'<button type="button" class="btn-prev"><img alt="Previous Item" src="https://www.w3.org/WAI/tutorials/img/chevron-left-75c7dd0b.png" /></button>' +
+				'<button type="button" class="btn-prev"><span class="visuallyhidden">Prev</span> <i class="fas fa-chevron-left"></i></button>' +
 			'</li>' +
 			'<li>' +
-				'<button type="button" class="btn-next"><img alt="Next Item" src="https://www.w3.org/WAI/tutorials/img/chevron-right-2f19bc8b.png" /> </button>' +
+				'<button type="button" class="btn-next"><span class="visuallyhidden">Next</span> <i class="fas fa-chevron-right"></i></button>' +
 			'</li>';
 
 		ctrls.querySelector('.btn-prev')
@@ -91,9 +91,9 @@ var myCarousel = (function() {
 				var li = document.createElement('li');
 
 				if (settings.startAnimated) {
-					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Stop Animation </span>￭</button>';
+					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i></button>';
 				} else {
-					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Start Animation </span>▶</button>';
+					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Play </span><i class="fas fa-play"></i></button>';
 				}
 
 				slidenav.appendChild(li);
@@ -261,7 +261,7 @@ var myCarousel = (function() {
 		settings.animate = false;
 		animationSuspended = false;
 		_this = carousel.querySelector('[data-action]');
-		_this.innerHTML = '<span class="visuallyhidden">Start Animation </span>▶';
+		_this.innerHTML = '<span class="visuallyhidden">Play </span><i class="fas fa-play"></i>';
 		_this.setAttribute('data-action', 'start');
 	}
 
@@ -270,7 +270,7 @@ var myCarousel = (function() {
 		animationSuspended = false;
 		timer = setTimeout(nextSlide, 3000);
 		_this = carousel.querySelector('[data-action]');
-		_this.innerHTML = '<span class="visuallyhidden">Stop Animation </span>￭';
+		_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
 		_this.setAttribute('data-action', 'stop');
 	}
 

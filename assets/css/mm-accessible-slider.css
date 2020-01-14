@@ -3,9 +3,18 @@
 	position: relative;
 	background: red;
 }
-.mm-accessible-slider button img{
+.mm-accessible-slider button img,
+.mm-accessible-slider button i{
 	z-index: -1;
 	position: relative;
+}
+.mm-accessible-slider button i{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	font-size: 32px;
 }
 .mm-accessible-slider .slide a {
     background-color: #058588;
@@ -124,12 +133,6 @@ body{
 .mm-accessible-slider .slidenav li {
 	display:inline-block;
 	margin: 0 .5em .2em;
-}
-.mm-accessible-slider .slidenav li:first-child{
-	position: absolute;
-	top: -999999999px;
-	left: -999999999px;
-	visibility: hidden;
 }
 .mm-accessible-slider .slidenav button {
 	background: #FFF;
