@@ -3,8 +3,9 @@ class MM_Accessible_Slider {
 	public static function init() {
 		require_once( MM_ACCESSIBLE_SLIDER_PLUGIN_DIR . 'includes/admin/class-mmas-customizer.php' );
 
+		MMAS_Customizer::init();
+
 		add_action( 'wp_enqueue_scripts', array( 'MM_Accessible_Slider', 'enqueue_assets' ) );
-		add_action( 'customize_register', array( 'MMAS_Customizer', 'register' ) );
 	}
 
 	public static function enqueue_assets() {

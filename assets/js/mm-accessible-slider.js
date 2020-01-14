@@ -257,21 +257,25 @@ var myCarousel = (function() {
 	}
 
 	function stopAnimation() {
-		clearTimeout(timer);
-		settings.animate = false;
-		animationSuspended = false;
-		_this = carousel.querySelector('[data-action]');
-		_this.innerHTML = '<span class="visuallyhidden">Play </span><i class="fas fa-play"></i>';
-		_this.setAttribute('data-action', 'start');
+		if ( settings.startAnimated ) {
+			clearTimeout(timer);
+			settings.animate = false;
+			animationSuspended = false;
+			_this = carousel.querySelector('[data-action]');
+			_this.innerHTML = '<span class="visuallyhidden">Play </span><i class="fas fa-play"></i>';
+			_this.setAttribute('data-action', 'start');
+		}
 	}
 
 	function startAnimation() {
-		settings.animate = true;
-		animationSuspended = false;
-		timer = setTimeout(nextSlide, 3000);
-		_this = carousel.querySelector('[data-action]');
-		_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
-		_this.setAttribute('data-action', 'stop');
+		if ( settings.startAnimated ) {
+			settings.animate = true;
+			animationSuspended = false;
+			timer = setTimeout(nextSlide, 3000);
+			_this = carousel.querySelector('[data-action]');
+			_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
+			_this.setAttribute('data-action', 'stop');
+		}
 	}
 
 	function suspendAnimation() {
