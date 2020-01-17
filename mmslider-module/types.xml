@@ -13,15 +13,15 @@
     <types>
         <type>
             <_builtin></_builtin>
-            <_toolset_edit_last>1574294279</_toolset_edit_last>
-            <_wpcf_author_id>4</_wpcf_author_id>
-            <__types_id>did-you-know</__types_id>
-            <__types_title>WSPEHSU Slides</__types_title>
-            <wpcf-post-type>did-you-know</wpcf-post-type>
+            <_toolset_edit_last>1579282437</_toolset_edit_last>
+            <_wpcf_author_id>3</_wpcf_author_id>
+            <__types_id>mm-slide</__types_id>
+            <__types_title>MM Slides</__types_title>
+            <wpcf-post-type>mm-slide</wpcf-post-type>
             <icon>info</icon>
             <labels>
-                <name>WSPEHSU Slides</name>
-                <singular_name>WSPEHSU Slide</singular_name>
+                <name>MM Slides</name>
+                <singular_name>MM Slide</singular_name>
                 <add_new>Add New</add_new>
                 <add_new_item>Add New %s</add_new_item>
                 <edit_item>Edit %s</edit_item>
@@ -34,7 +34,7 @@
                 <all_items>All items</all_items>
                 <enter_title_here>Enter title here</enter_title_here>
             </labels>
-            <slug>did-you-know</slug>
+            <slug>mm-slide</slug>
             <editor>classic</editor>
             <description></description>
             <public>public</public>
@@ -66,9 +66,9 @@
             <rest_base></rest_base>
             <is_repeating_field_group></is_repeating_field_group>
             <is_intermediary_post_type></is_intermediary_post_type>
-            <id>did-you-know</id>
-            <hash>e7fccf192a9e56314559b0dd32befca6</hash>
-            <checksum>e7fccf192a9e56314559b0dd32befca6</checksum>
+            <id>mm-slide</id>
+            <hash>8149d0dc8ec6a34006699de33e2d7702</hash>
+            <checksum>8149d0dc8ec6a34006699de33e2d7702</checksum>
         </type>
     </types>
 </types>
