@@ -132,7 +132,7 @@ class MMAS_Customizer {
 	}
 
 	public static function sanitize_checkbox( $checked ) {
-		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+		return ( ( isset( $checked ) && true == $checked ) ? 1 : 0 );
 	}
 
 	public static function enqueue_script() {
