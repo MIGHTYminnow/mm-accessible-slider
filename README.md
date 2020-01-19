@@ -6,6 +6,6 @@
 
 3. Download and install the latest version of **MM Accessible Slider** from https://github.com/MIGHTYminnow/mm-accessible-slider/releases.
 
-4. On the WordPress Dashboard, go to *Toolset > Export / Import > Modules* and import the file **wcagslider-module.zip** that is contained on the MM Accessible Slider plugin.
+4. On the WordPress Dashboard, go to *Toolset > Export / Import > Modules* and import the file **mmslider-module.zip** that is contained on the MM Accessible Slider plugin.
 
 5. You are done! Now you can create accessible slides. Use the following shortcode to print the slider: **[wpv-view name="mm-slider"]**
