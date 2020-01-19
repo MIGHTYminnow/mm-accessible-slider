@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MM Accessible Slider
  * Description: Accessible Slider by MIGHTYminnow.
- * Version: 1.2.0-beta
+ * Version: 1.2.0-beta-2
  * Author: MIGHTYminnow
  * Author URI: https://mightyminnow.com
  */
