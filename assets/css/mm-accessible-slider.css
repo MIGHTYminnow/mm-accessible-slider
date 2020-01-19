@@ -41,6 +41,9 @@ body{
 	padding: 0;
 	list-style: none;
 }
+.mm-accessible-slider .carousel li {
+	list-style: none;
+}
 
 /* -------------------------------------------------------- *
  * - Control (Next/Prev) and Navigation (Thumbs) Buttons 

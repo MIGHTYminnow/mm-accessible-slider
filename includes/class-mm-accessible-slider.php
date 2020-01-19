@@ -29,16 +29,16 @@ class MM_Accessible_Slider {
 		ob_start();
 		?>
 		.mm-accessible-slider .mm-slide {
-			background: <?php echo get_option( 'mmas_bg', '#f5f5f5' ); ?>; 
+			background: <?php echo get_option( 'mmas_bg', '#f5f5f5' ); ?> !important;
 		}
-		.mm-accessible-slider .mm-slide .mm-slide-content a{
-			color: <?php echo get_option( 'mmas_button_color', '#FFFFFF' ); ?>;
-			background: <?php echo get_option( 'mmas_button_bg', '#058588' ); ?>;
+		.mm-accessible-slider .mm-slide-content a{
+			color: <?php echo get_option( 'mmas_button_color', '#FFFFFF' ); ?> !important;
+			background: <?php echo get_option( 'mmas_button_bg', '#058588' ); ?> !important;
 		}
-		.mm-accessible-slider .mm-slide .mm-slide-content a:hover,
-		.mm-accessible-slider .mm-slide .mm-slide-content a:focus{
-			color: <?php echo get_option( 'mmas_button_hover_color', '#FFFFFF' ); ?>;
-			background: <?php echo get_option( 'mmas_button_hover_bg', '#262626' ); ?>;
+		.mm-accessible-slider .mm-slide-content a:hover,
+		.mm-accessible-slider .mm-slide-content a:focus{
+			color: <?php echo get_option( 'mmas_button_hover_color', '#FFFFFF' ); ?> !important;
+			background: <?php echo get_option( 'mmas_button_hover_bg', '#262626' ); ?> !important;
 		}
 		<?php
 		$css .= ob_get_clean();
