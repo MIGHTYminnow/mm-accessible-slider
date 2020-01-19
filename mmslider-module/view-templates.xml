@@ -4,18 +4,17 @@
         <view-template>
             <ID>9</ID>
             <post_content>&lt;li class=&quot;slide&quot; data-thumb=&quot;[wpv-post-featured-image output=&quot;url&quot;]&quot;&gt;
-  &lt;div class=&quot;wcag-slide&quot;&gt;
-    &lt;div class=&quot;dyk&quot;&gt;
-    &lt;div class=&quot;dyk-info&quot;&gt;
-        &lt;h2&gt;[wpv-post-title]&lt;/h2&gt;
-        &lt;h3&gt;[wpv-post-body view_template=&quot;None&quot;]&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;dyk-image&quot;&gt;
-        [wpv-post-featured-image size=&quot;full&quot;]
-    &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/li&gt;</post_content>
+	&lt;div class=&quot;mm-slide&quot;&gt;
+		&lt;div class=&quot;mm-slide-info&quot;&gt;
+			&lt;h2 class=&quot;mm-slide-title&quot;&gt;[wpv-post-title]&lt;/h2&gt;
+			&lt;div class=&quot;mm-slide-content&quot;&gt;[wpv-post-body view_template=&quot;None&quot;]&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;mm-slide-image&quot;&gt;
+			[wpv-post-featured-image size=&quot;full&quot;]
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/li&gt;
+</post_content>
             <post_title>MM Slide</post_title>
             <post_name>mm-slide</post_name>
             <post_excerpt></post_excerpt>

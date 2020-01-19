@@ -86,22 +86,23 @@
                     <additional_js></additional_js>
                     <layout_meta_html>[wpv-layout-start]
 	[wpv-items-found]
-	&lt;figure class=&quot;mm-accessible-slider&quot;&gt;
-		&lt;div id=&quot;c&quot; class=&quot;carousel&quot;&gt;
-			&lt;ul class=&quot;wcag-slides&quot;&gt;
-	&lt;!-- wpv-loop-start --&gt;
-		&lt;wpv-loop&gt;
-          [wpv-post-body view_template=&quot;mm-slide&quot;]
-		&lt;/wpv-loop&gt;
-	&lt;!-- wpv-loop-end --&gt;
-			&lt;/ul&gt;
-		&lt;/div&gt;
-	&lt;/figure&gt;
+		&lt;figure class=&quot;mm-accessible-slider&quot;&gt;
+			&lt;div id=&quot;c&quot; class=&quot;carousel&quot;&gt;
+				&lt;ul&gt;
+					&lt;!-- wpv-loop-start --&gt;
+					&lt;wpv-loop&gt;
+			          [wpv-post-body view_template=&quot;mm-slide&quot;]
+					&lt;/wpv-loop&gt;
+					&lt;!-- wpv-loop-end --&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/figure&gt;
 	[/wpv-items-found]
 	[wpv-no-items-found]
-		&lt;strong&gt;[wpml-string context=&quot;wpv-views&quot;]No items found[/wpml-string]&lt;/strong&gt;
+		&lt;strong&gt;[wpml-string context=&quot;wpv-views&quot;]No slides were found.[/wpml-string]&lt;/strong&gt;
 	[/wpv-no-items-found]
-[wpv-layout-end]</layout_meta_html>
+[wpv-layout-end]
+</layout_meta_html>
                     <included_ct_ids>MM Slide</included_ct_ids>
                 </_wpv_layout_settings>
             </meta>

@@ -1,62 +1,33 @@
-.mm-accessible-slider button{
-	z-index: 2;
-	position: relative;
-	background: red;
-}
-.mm-accessible-slider button img,
-.mm-accessible-slider button i{
-	z-index: -1;
-	position: relative;
-}
-.mm-accessible-slider button i{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 60px;
-	height: 60px;
-	font-size: 32px;
-}
-.mm-accessible-slider .slide a {
-    background-color: #058588;
-    color: #fff;
-    text-decoration: none;
-    padding: 15px 20px;
-}
-.mm-accessible-slider .slide a:hover {
-	color: #fff;
-    background-color: #333;
-}
-/** Active */
-.mm-accessible-slider .active .slide {
-	display: block !important;
-	visibility: hidden;
-	transition: left .6s ease-out;
-}
-.mm-accessible-slider .active .slide.current {
-	visibility: visible;
-	left: 0;
-}
-.mm-accessible-slider .active .slide.next {
-	left: 100%;
-}
-.mm-accessible-slider .active .slide.prev {
-	left: -100%;
-}
-.mm-accessible-slider .active .slide.next.in-transition,
-.mm-accessible-slider .active .slide.prev.in-transition {
-	visibility:visible;
+/* ======================================================== *
+ * = Accessible Slider 
+ * ======================================================== */
+
+/* -------------------------------------------------------- *
+ * - Screen Reader Text 
+ * -------------------------------------------------------- */
+.mm-accessible-slider .visuallyhidden{
+	border:0;
+	clip:rect(0 0 0 0);
+	height:1px;
+	margin:-1px;
+	overflow:hidden;
+	padding:0;
+	position:absolute;
+	width:1px
 }
 
-/** Slider */
+/* -------------------------------------------------------- *
+ * - Slider 
+ * -------------------------------------------------------- */
+body{
+	overflow-x: hidden;
+}
 .mm-accessible-slider .carousel,
 .mm-accessible-slider .slide {
 	width: 100%;
 	padding:0;
 	margin: 0;
 	overflow: hidden;
-}
-body{
-	overflow-x: hidden;
 }
 .mm-accessible-slider .carousel {
 	position: relative;
@@ -71,24 +42,31 @@ body{
 	list-style: none;
 }
 
-/** Active */
-.mm-accessible-slider .carousel.active {
-	position:relative;
+/* -------------------------------------------------------- *
+ * - Control (Next/Prev) and Navigation (Thumbs) Buttons 
+ * -------------------------------------------------------- */
+.mm-accessible-slider button{
+	z-index: 2;
+	position: relative;
+	color: #000;
 }
-.mm-accessible-slider .active .slide {
-	border: none;
-	display: none;
-	position:absolute;
-	top:0;
-	left:0;
-	z-index:200;
+.mm-accessible-slider button img,
+.mm-accessible-slider button i{
+	z-index: -1;
+	position: relative;
 }
-.mm-accessible-slider .slide.current {
-	display:block;
-	z-index: 500;
+.mm-accessible-slider button i{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	font-size: 32px;
 }
 
-/** Controls */
+/* -------------------------------------------------------- *
+ * - Controls (Next/Prev)
+ * -------------------------------------------------------- */
 .mm-accessible-slider .btn-prev,
 .mm-accessible-slider .btn-next {
 	position:absolute;
@@ -117,11 +95,13 @@ body{
 	border-radius: .25em 0 0 .25em;
 }
 .mm-accessible-slider .carousel.with-slidenav {
-	padding-bottom: 2em;
+	padding-bottom: 90px;
 	background-color: #fff;
 }
 
-/** Navigation */
+/* -------------------------------------------------------- *
+ * - Navigation (Thumbs)
+ * -------------------------------------------------------- */
 .mm-accessible-slider .slidenav {
 	z-index: 9999;
 	position: absolute;
@@ -129,10 +109,13 @@ body{
 	left: 0;
 	right: 0;
 	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .mm-accessible-slider .slidenav li {
-	display:inline-block;
-	margin: 0 .5em .2em;
+	margin: 0 .5em;
+	height: 64px;
 }
 .mm-accessible-slider .slidenav button {
 	background: #FFF;
@@ -160,7 +143,20 @@ body{
 	object-fit: contain;
 }
 
-.mm-accessible-slider .dyk{
+/* -------------------------------------------------------- *
+ * - Slides 
+ * -------------------------------------------------------- */
+.mm-accessible-slider .slide a {
+    background-color: #058588;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+.mm-accessible-slider .slide a:hover {
+	color: #fff;
+    background-color: #333;
+}
+.mm-accessible-slider .mm-slide{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -168,17 +164,18 @@ body{
 	margin: auto;
 	max-width: 900px;
 }
-.mm-accessible-slider .dyk-info,
-.mm-accessible-slider .dyk-image{
+.mm-accessible-slider .mm-slide-info,
+.mm-accessible-slider .mm-slide-image{
 	padding: 15px;
 }
-.mm-accessible-slider .dyk-info{
+.mm-accessible-slider .mm-slide-info{
 	text-align: center;
 }
-.mm-accessible-slider .dyk h3{
-	font: 600 26px/30px 'Open Sans';
+.mm-accessible-slider .mm-slide-title,
+.mm-accessible-slider .mm-slide-content{
+	margin: 0 0 14px;
 }
-.mm-accessible-slider .dyk-image img{
+.mm-accessible-slider .mm-slide-image img{
 	width: auto;
 	height: 350px !important;
 	margin: 0 auto !important;
@@ -186,11 +183,60 @@ body{
 	object-fit: contain;
 }
 
+
+/* -------------------------------------------------------- *
+ * - Active Slide 
+ * -------------------------------------------------------- */
+.mm-accessible-slider .active .slide {
+	display: block !important;
+	visibility: hidden;
+	transition: left .6s ease-out;
+}
+.mm-accessible-slider .active .slide.current {
+	visibility: visible;
+	left: 0;
+}
+.mm-accessible-slider .active .slide.next {
+	left: 100%;
+}
+.mm-accessible-slider .active .slide.prev {
+	left: -100%;
+}
+.mm-accessible-slider .active .slide.next.in-transition,
+.mm-accessible-slider .active .slide.prev.in-transition {
+	visibility:visible;
+}
+.mm-accessible-slider .carousel.active {
+	position:relative;
+}
+.mm-accessible-slider .active .slide {
+	border: none;
+	display: none;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:200;
+}
+.mm-accessible-slider .slide.current {
+	display:block;
+	z-index: 500;
+}
+
+
+
+
+
+
+
+/* ======================================================== *
+ * = Media Queries 
+ * ======================================================== */
+
 @media( max-width: 767px ) {
-	.mm-accessible-slider .dyk{
+	.mm-accessible-slider .mm-slide{
 		max-width: 320px;
 	}
-	.mm-accessible-slider .dyk-image img{
+	.mm-accessible-slider .mm-slide-image img{
 		height: 150px;
 	}
 	.mm-accessible-slider .carousel .slidenav{
@@ -208,10 +254,10 @@ body{
 }
 
 @media( min-width: 480px ) and ( max-width: 767px ) {
-	.mm-accessible-slider .dyk{
+	.mm-accessible-slider .mm-slide{
 		max-width: 480px;
 	}
-	.mm-accessible-slider .dyk-image img{
+	.mm-accessible-slider .mm-slide-image img{
 		height: 250px;
 	}
 }
@@ -220,11 +266,11 @@ body{
 	.mm-accessible-slider .carousel {
 		height: 650px;
 	}
-	.mm-accessible-slider .dyk-info,
-	.mm-accessible-slider .dyk-image{
+	.mm-accessible-slider .mm-slide-info,
+	.mm-accessible-slider .mm-slide-image{
 		padding: 30px;
 	}
-	.mm-accessible-slider .dyk-image img{
+	.mm-accessible-slider .mm-slide-image img{
 		height: 400px;
 	}
 }
@@ -233,15 +279,15 @@ body{
 	.mm-accessible-slider .carousel {
 		height: 550px;
 	}
-	.mm-accessible-slider .dyk{
+	.mm-accessible-slider .mm-slide{
 		display: flex;
 		flex-direction: row;
 	}
-	.mm-accessible-slider .dyk-info{
+	.mm-accessible-slider .mm-slide-info{
 		width: 40%;
 		text-align: left;
 	}
-	.mm-accessible-slider .dyk-image{
+	.mm-accessible-slider .mm-slide-image{
 		width: 60%;
 	}
 }
@@ -250,10 +296,10 @@ body{
 	.mm-accessible-slider .carousel {
 		height: 500px;
 	}
-	.mm-accessible-slider .dyk{
+	.mm-accessible-slider .mm-slide{
 		max-width: 1140px;
 	}
-	.mm-accessible-slider .dyk-image img{
+	.mm-accessible-slider .mm-slide-image img{
 		height: 570px;
 	}
 }
