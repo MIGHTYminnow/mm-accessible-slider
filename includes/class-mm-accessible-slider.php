@@ -31,12 +31,12 @@ class MM_Accessible_Slider {
 		.mm-accessible-slider .mm-slide {
 			background: <?php echo get_option( 'mmas_bg', '#f5f5f5' ); ?>; 
 		}
-		.mm-accessible-slider .mm-slide a{
+		.mm-accessible-slider .mm-slide .mm-slide-content a{
 			color: <?php echo get_option( 'mmas_button_color', '#FFFFFF' ); ?>;
 			background: <?php echo get_option( 'mmas_button_bg', '#058588' ); ?>;
 		}
-		.mm-accessible-slider .mm-slide a:hover,
-		.mm-accessible-slider .mm-slide a:focus{
+		.mm-accessible-slider .mm-slide .mm-slide-content a:hover,
+		.mm-accessible-slider .mm-slide .mm-slide-content a:focus{
 			color: <?php echo get_option( 'mmas_button_hover_color', '#FFFFFF' ); ?>;
 			background: <?php echo get_option( 'mmas_button_hover_bg', '#262626' ); ?>;
 		}

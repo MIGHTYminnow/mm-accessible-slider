@@ -49,6 +49,8 @@ body{
 	z-index: 2;
 	position: relative;
 	color: #000;
+	box-shadow: none;
+	border-radius: 0;
 }
 .mm-accessible-slider button img,
 .mm-accessible-slider button i{
