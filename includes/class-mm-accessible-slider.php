@@ -28,15 +28,15 @@ class MM_Accessible_Slider {
 	public static function print_custom_styles( $css, $stylesheet ) {
 		ob_start();
 		?>
-		.mm-accessible-slider .dyk {
+		.mm-accessible-slider .mm-slide {
 			background: <?php echo get_option( 'mmas_bg', '#f5f5f5' ); ?>; 
 		}
-		.mm-accessible-slider .dyk a{
+		.mm-accessible-slider .mm-slide a{
 			color: <?php echo get_option( 'mmas_button_color', '#FFFFFF' ); ?>;
 			background: <?php echo get_option( 'mmas_button_bg', '#058588' ); ?>;
 		}
-		.mm-accessible-slider .dyk a:hover,
-		.mm-accessible-slider .dyk a:focus{
+		.mm-accessible-slider .mm-slide a:hover,
+		.mm-accessible-slider .mm-slide a:focus{
 			color: <?php echo get_option( 'mmas_button_hover_color', '#FFFFFF' ); ?>;
 			background: <?php echo get_option( 'mmas_button_hover_bg', '#262626' ); ?>;
 		}
