@@ -1,3 +1,4 @@
+(function ( $ ) {
 var myCarousel = (function() {
 
 	var carousel, slides, index, slidenav, settings, timer, setFocus, animationSuspended;
@@ -272,3 +273,4 @@ c.init( MMAS.settings );
 MMAS.settings.id = 'slide-2';
 var c = new myCarousel();
 c.init( MMAS.settings );
+}( jQuery ));
