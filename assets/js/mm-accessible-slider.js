@@ -25,7 +25,7 @@
 		}
 
 		function init(set) {
-			settings = set;
+			settings = Object.assign({}, set );
 			carousel = document.getElementById(settings.id);
 			slides = carousel.querySelectorAll('.slide');
 
