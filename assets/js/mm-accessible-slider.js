@@ -295,5 +295,11 @@ var myCarousel = (function() {
 		start:startAnimation
 	};
 });
+
+MMAS.settings.id = 'slide-1';
+var c = new myCarousel();
+c.init( MMAS.settings );
+
+MMAS.settings.id = 'slide-2';
 var c = new myCarousel();
 c.init( MMAS.settings );
