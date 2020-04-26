@@ -195,6 +195,8 @@
 		}
 
 		function nextSlide(announceItem) {
+			console.log( 'nextSlide' );
+			console.log( settings );
 			announceItem = typeof announceItem !== 'undefined' ? announceItem : false;
 
 			var length = slides.length,
