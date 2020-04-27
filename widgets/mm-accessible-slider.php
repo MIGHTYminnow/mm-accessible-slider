@@ -193,13 +193,6 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 					</ul>
 				</div>
 			</figure>
-			<script stype="text/javascript">
-			jQuery(document).ready(function($){
-				var slide<?php echo self::$sliders_count; ?> = {"id":"slide-<?php echo self::$sliders_count; ?>","slidenav":true,"animate":true,"startAnimated":true,"delay":2000};
-				var c = new myCarousel();
-				c.init( slide<?php echo self::$sliders_count; ?> );
-			});
-			</script>
 		</section>
 		<?php
 	}
