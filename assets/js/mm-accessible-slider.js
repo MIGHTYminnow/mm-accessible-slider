@@ -178,7 +178,6 @@ var myCarousel = (function() {
 		}
 
 		if(settings.slidenav) {
-			console.log( carousel );
 			var buttons = carousel.querySelectorAll('.slidenav button[data-slide]');
 			for (var j = buttons.length - 1; j >= 0; j--) {
 				var thumb = jQuery( '#' + settings.id + ' .slide' ).eq( j ).data( 'thumb' );
