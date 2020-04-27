@@ -33,7 +33,7 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'MM Accesible Slider', 'mmas' );
+		return __( 'Accesible Slider', 'mmas' );
 	}
 
 	/**
@@ -61,7 +61,7 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'general' ];
+		return [ 'mightyminnow' ];
 	}
 
 	/**
