@@ -8,6 +8,8 @@
  */
 class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 
+	public static $sliders_count = 0;
+
 	/**
 	 * Get widget name.
 	 *
@@ -84,6 +86,12 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
+		self::$sliders_count++;
+		?>
+		<section>
+			<h2>Slider #<?php echo self::$sliders_count; ?></h2>
+		</section>
+		<?php
 	}
 
 }
