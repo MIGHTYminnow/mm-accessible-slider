@@ -194,7 +194,6 @@ var myCarousel = (function() {
 	}
 
 	function nextSlide(announceItem) {
-		console.log( settings );
 		announceItem = typeof announceItem !== 'undefined' ? announceItem : false;
 
 		var length = slides.length,
