@@ -128,6 +128,7 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 */
 	protected function render() {
 		self::$sliders_count++;
+		$settings = $this->get_settings_for_display();
 		?>
 		<section>
 			<h2>Slider #<?php echo self::$sliders_count; ?></h2>
@@ -135,21 +136,33 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 				<div id="slide-<?php echo self::$sliders_count; ?>" class="carousel">
 					<ul class="wcag-slides">
 						<?php
-						for( $slide = 1; $slide <= 4; $slide++ ) {
-							?>
-							<li class="slide" data-thumb="https://via.placeholder.com/150">
-								<div class="wcag-slide">
-									<div class="dyk">
-										<div class="dyk-info">
-											<h3>Slide <?php echo $slide; ?></h3>
-										</div>
-										<div class="dyk-image">
-											<img width="500" height="375" src="https://via.placeholder.com/500x375" />
+						if ( 'posts' == $settings['content_type'] ) {
+							$slides = new WP_Query( array(
+								'post_type' => $settings['post_type'],
+								'posts_per_page' => -1,
+							) );
+						}
+
+						if ( $slides->have_posts() ) {
+							while ( $slides->have_posts() ) {
+								$slides->the_post();
+								$thumb_id = get_post_thumbnail_id();
+								$thumb_src = wp_get_attachment_image_src( $thumb_id );
+								?>
+								<li class="slide" data-thumb="<?php echo $thumb_src[0]; ?>">
+									<div class="wcag-slide">
+										<div class="dyk">
+											<div class="dyk-info">
+												<h3><?php the_title(); ?></h3>
+											</div>
+											<div class="dyk-image">
+												<?php the_post_thumbnail(); ?>
+											</div>
 										</div>
 									</div>
-								</div>
-							</li>
-							<?php
+								</li>
+								<?php
+							}
 						}
 						?>
 					</ul>
