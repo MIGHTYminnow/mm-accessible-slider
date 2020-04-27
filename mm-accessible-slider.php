@@ -152,6 +152,11 @@ final class MM_Accessible_Slider_Extension {
 		// Init widgets
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
 
+		// Enqueue styles
+		add_action( 'elementor/frontend/after_enqueue_styles', [ $this, 'enqueue_styles' ] );
+
+		// Enqueue scripts
+		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'enqueue_scripts' ] );
 	}
 
 	/**
@@ -266,6 +271,32 @@ final class MM_Accessible_Slider_Extension {
 		// Register widget
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \MM_Accessible_Slider_Widget() );
 
+	}
+
+	/**
+	 * Enqueue Styles
+	 *
+	 * Load the stylesheets on the front-end.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 */
+	public function enqueue_styles() {
+		wp_enqueue_style( 'mm-accessible-slider', plugins_url( 'assets/css/mm-accessible-slider.css', __FILE__ ), [], '1.0.0' );
+	}
+
+	/**
+	 * Enqueue Scripts
+	 *
+	 * Load the javascript files on the front-end.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 */
+	public function enqueue_scripts() {
+		wp_enqueue_script( 'mm-accessible-slider', plugins_url( 'assets/js/mm-accessible-slider.js', __FILE__ ), [ 'jquery' ], '1.0.0', true );
 	}
 
 }
