@@ -34,10 +34,10 @@ var myCarousel = (function() {
 
 		ctrls.className = 'controls';
 		ctrls.innerHTML = '<li>' +
-				'<button type="button" class="btn-prev"><span class="visuallyhidden">Prev</span> <i class="fas fa-chevron-left"></i></button>' +
+				'<button type="button" class="btn-prev"><span class="visuallyhidden">Prev</span> <img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/prev.svg"></button>' +
 			'</li>' +
 			'<li>' +
-				'<button type="button" class="btn-next"><span class="visuallyhidden">Next</span> <i class="fas fa-chevron-right"></i></button>' +
+				'<button type="button" class="btn-next"><span class="visuallyhidden">Next</span> <img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/next.svg"></button>' +
 			'</li>';
 
 		ctrls.querySelector('.btn-prev')
@@ -60,9 +60,9 @@ var myCarousel = (function() {
 				var li = document.createElement('li');
 
 				if (settings.startAnimated) {
-					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i></button>';
+					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Pause </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/pause.svg"></button>';
 				} else {
-					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Play </span><i class="fas fa-play"></i></button>';
+					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Play </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/play.svg"></button>';
 				}
 
 				slidenav.appendChild(li);
@@ -232,7 +232,7 @@ var myCarousel = (function() {
 			settings.animate = false;
 			animationSuspended = false;
 			_this = carousel.querySelector('[data-action]');
-			_this.innerHTML = '<span class="visuallyhidden">Play </span><i class="fas fa-play"></i>';
+			_this.innerHTML = '<span class="visuallyhidden">Play </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/play.svg">';
 			_this.setAttribute('data-action', 'start');
 		}
 	}
@@ -243,7 +243,7 @@ var myCarousel = (function() {
 			animationSuspended = false;
 			timer = setTimeout(nextSlide, settings.delay);
 			_this = carousel.querySelector('[data-action]');
-			_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
+			_this.innerHTML = '<span class="visuallyhidden">Pause </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/pause.svg">';
 			_this.setAttribute('data-action', 'stop');
 		}
 	}

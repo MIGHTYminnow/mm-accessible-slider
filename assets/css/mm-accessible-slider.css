@@ -56,7 +56,8 @@ body{
 	z-index: -1;
 	position: relative;
 }
-.mm-accessible-slider button i{
+.mm-accessible-slider button i,
+.mm-accessible-slider button img{
 	display: flex;
 	justify-content: center;
 	align-items: center;
