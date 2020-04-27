@@ -75,6 +75,47 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function _register_controls() {
+		$this->start_controls_section(
+			'content',
+			[
+				'label' => __( 'Content', 'mm-accessible-slider' ),
+			]
+		);
+
+		$post_types = get_post_types( [], 'objects' );
+		$options = [];
+		foreach ( $post_types as $post_type ) {
+			$options[ $post_type->name ] = $post_type->label;
+		}
+
+		$this->add_control(
+			'post_type',
+			[
+				'label' => __( 'Post Type', 'mm-accessible-slider' ),
+				'type' => Elementor\Controls_Manager::SELECT,
+				'options' => $options,
+				'default' => 'post',
+			]
+		);
+
+		$this->add_control(
+			'content_type',
+			[
+				'label' => __( 'Type of Content', 'mm-accessible-slider' ),
+				'type' => Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'posts' => __( 'All Posts', 'mm-accessible-slider' ),
+					'attachments' => __( 'Post Attachments', 'mm-accessible-slider' ),
+				],
+				'default' => 'posts',
+				'description' => '<ul>'
+						. '<li>' . __( '<b>All Posts</b> creates a slide for every post entry.', 'mm-accessible-slider' ) . '</li>'
+						. '<li>' . __( '<b>Post Attachments</b> creates a slide for every image attached to a specific post.', 'mm-accessible-slider' ) . '</li>'
+					. '</ul>',
+			]
+		);
+
+		$this->end_controls_section();
 	}
 
 	/**
