@@ -33,7 +33,7 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Accesible Slider', 'mmas' );
+		return __( 'MM Accesible Slider', 'mmas' );
 	}
 
 	/**
