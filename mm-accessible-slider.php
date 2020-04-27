@@ -146,6 +146,9 @@ final class MM_Accessible_Slider_Extension {
 			return;
 		}
 
+		// Register widget categories
+		add_action( 'elementor/elements/categories_registered', [ $this, 'register_widget_categories' ] );
+
 		// Init widgets
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
 
@@ -222,6 +225,27 @@ final class MM_Accessible_Slider_Extension {
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+
+	}
+
+	/**
+	 * Register widget categories
+	 *
+	 * Add custom widget categories.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 */
+	public function register_widget_categories( $elements_manager ) {
+
+		$elements_manager->add_category(
+			'mightyminnow',
+			[
+			 'title' => __( 'MIGHTYminnow', 'mm-accessible-slider' ),
+			 'icon' => 'fa fa-plug',
+			]
+		);
 
 	}
 
