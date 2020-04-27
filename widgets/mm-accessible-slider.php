@@ -90,6 +90,30 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 		?>
 		<section>
 			<h2>Slider #<?php echo self::$sliders_count; ?></h2>
+			<figure class="mm-accessible-slider">
+				<div id="slide-<?php echo self::$sliders_count; ?>" class="carousel">
+					<ul class="wcag-slides">
+						<?php
+						for( $slide = 1; $slide <= 4; $slide++ ) {
+							?>
+							<li class="slide" data-thumb="https://via.placeholder.com/150">
+								<div class="wcag-slide">
+									<div class="dyk">
+										<div class="dyk-info">
+											<h3>Slide <?php echo $slide; ?></h3>
+										</div>
+										<div class="dyk-image">
+											<img width="500" height="375" src="https://via.placeholder.com/500x375" />
+										</div>
+									</div>
+								</div>
+							</li>
+							<?php
+						}
+						?>
+					</ul>
+				</div>
+			</figure>
 		</section>
 		<?php
 	}
