@@ -319,3 +319,33 @@ body{
 .slide .dyk-info{
 	text-align: center;
 }
+
+@media( min-width: 768px ) {
+	.mm-accessible-slider .carousel{
+		height: 460px;
+	}	
+}
+@media( min-width: 1024px ) {
+	.mm-accessible-slider .carousel{
+		height: 460px;
+	}
+	.mm-accessible-slider .slide,
+	.mm-accessible-slider .wcag-slide,
+	.mm-accessible-slider .dyk{
+		height: 370px;
+	}	
+	.mm-accessible-slider .dyk{
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: cneter;
+		max-width: 700px;
+	}
+	.mm-accessible-slider .dyk > *{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 50%;
+	}
+}
