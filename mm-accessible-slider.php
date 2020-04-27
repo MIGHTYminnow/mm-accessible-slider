@@ -146,6 +146,9 @@ final class MM_Accessible_Slider_Extension {
 			return;
 		}
 
+		// Init widgets
+		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+
 	}
 
 	/**
@@ -219,6 +222,25 @@ final class MM_Accessible_Slider_Extension {
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+
+	}
+
+	/**
+	 * Init Widgets
+	 *
+	 * Include widgets files and register them
+	 *
+	 * @since 2.0.0
+	 *
+	 * @access public
+	 */
+	public function init_widgets() {
+
+		// Include Widget files
+		require_once( __DIR__ . '/widgets/mm-accessible-slider.php' );
+
+		// Register widget
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \MM_Accessible_Slider_Widget() );
 
 	}
 
