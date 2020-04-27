@@ -302,3 +302,19 @@ final class MM_Accessible_Slider_Extension {
 }
 
 MM_Accessible_Slider_Extension::instance();
+
+add_action( 'wp_footer', function(){
+?>
+	<script type="text/javascript">
+	<?php
+	for ( $i = 1; $i <= MM_Accessible_Slider_Widget::$sliders_count; $i++ ) {
+		?>
+		var slide<?php echo $i; ?> = {"id":"slide-<?php echo $i; ?>","slidenav":true,"animate":true,"startAnimated":true,"delay":2000};
+		var c = new myCarousel();
+		c.init( slide<?php echo $i; ?> );
+		<?php
+	}
+	?>
+	</script>
+<?php
+}, 9999 );

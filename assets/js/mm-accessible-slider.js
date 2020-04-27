@@ -264,11 +264,3 @@ var myCarousel = (function() {
 		start:startAnimation
 	};
 });
-
-var slide1 = {"id":"slide-1","slidenav":true,"animate":true,"startAnimated":true,"delay":2000};
-var c = new myCarousel();
-c.init( slide1 );
-
-var slide2 = {"id":"slide-2","slidenav":true,"animate":true,"startAnimated":true,"delay":2000};
-var c = new myCarousel();
-c.init( slide2 );
