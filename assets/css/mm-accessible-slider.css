@@ -30,11 +30,7 @@ body{
 	overflow: hidden;
 }
 .mm-accessible-slider .carousel {
-	position: relative;
-	left: 50%;
-	width: 100vw;
 	height: 600px;
-	transform: translate( -50%, 0 );
 }
 .mm-accessible-slider .carousel ul {
 	margin:0;
@@ -60,7 +56,8 @@ body{
 	z-index: -1;
 	position: relative;
 }
-.mm-accessible-slider button i{
+.mm-accessible-slider button i,
+.mm-accessible-slider button img{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -306,5 +303,49 @@ body{
 	}
 	.mm-accessible-slider .mm-slide-image img{
 		height: 570px;
+	}
+}
+
+
+.slide img{
+	display: block;
+	margin: auto;
+	max-height: 200px;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.slide .dyk-info{
+	text-align: center;
+}
+
+@media( min-width: 768px ) {
+	.mm-accessible-slider .carousel{
+		height: 460px;
+	}	
+}
+@media( min-width: 1024px ) {
+	.mm-accessible-slider .carousel{
+		height: 460px;
+	}
+	.mm-accessible-slider .slide,
+	.mm-accessible-slider .wcag-slide,
+	.mm-accessible-slider .dyk{
+		height: 370px;
+	}	
+	.mm-accessible-slider .dyk{
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: cneter;
+		max-width: 700px;
+	}
+	.mm-accessible-slider .dyk > *{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 50%;
 	}
 }

@@ -1,34 +1,3 @@
-/* focusin/out event polyfill (firefox) */
-!function(){
-	var w = window,
-	d = w.document;
-
-	if( w.onfocusin === undefined ){
-		d.addEventListener('focus' ,addPolyfill ,true);
-		d.addEventListener('blur' ,addPolyfill ,true);
-		d.addEventListener('focusin' ,removePolyfill ,true);
-		d.addEventListener('focusout' ,removePolyfill ,true);
-	}
-	function addPolyfill(e){
-		var type = e.type === 'focus' ? 'focusin' : 'focusout';
-		var event = new CustomEvent(type, { bubbles:true, cancelable:false });
-		event.c1Generated = true;
-		e.target.dispatchEvent( event );
-	}
-	function removePolyfill(e){
-if(!e.c1Generated){ // focus after focusin, so chrome will the first time trigger tow times focusin
-	d.removeEventListener('focus' ,addPolyfill ,true);
-	d.removeEventListener('blur' ,addPolyfill ,true);
-	d.removeEventListener('focusin' ,removePolyfill ,true);
-	d.removeEventListener('focusout' ,removePolyfill ,true);
-}
-setTimeout(function(){
-	d.removeEventListener('focusin' ,removePolyfill ,true);
-	d.removeEventListener('focusout' ,removePolyfill ,true);
-});
-}
-}();
-
 var myCarousel = (function() {
 
 	var carousel, slides, index, slidenav, settings, timer, setFocus, animationSuspended;
@@ -65,10 +34,10 @@ var myCarousel = (function() {
 
 		ctrls.className = 'controls';
 		ctrls.innerHTML = '<li>' +
-				'<button type="button" class="btn-prev"><span class="visuallyhidden">Prev</span> <i class="fas fa-chevron-left"></i></button>' +
+				'<button type="button" class="btn-prev"><span class="visuallyhidden">Prev</span> <img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/prev.svg"></button>' +
 			'</li>' +
 			'<li>' +
-				'<button type="button" class="btn-next"><span class="visuallyhidden">Next</span> <i class="fas fa-chevron-right"></i></button>' +
+				'<button type="button" class="btn-next"><span class="visuallyhidden">Next</span> <img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/next.svg"></button>' +
 			'</li>';
 
 		ctrls.querySelector('.btn-prev')
@@ -91,9 +60,9 @@ var myCarousel = (function() {
 				var li = document.createElement('li');
 
 				if (settings.startAnimated) {
-					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i></button>';
+					li.innerHTML = '<button data-action="stop"><span class="visuallyhidden">Pause </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/pause.svg"></button>';
 				} else {
-					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Play </span><i class="fas fa-play"></i></button>';
+					li.innerHTML = '<button data-action="start"><span class="visuallyhidden">Play </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/play.svg"></button>';
 				}
 
 				slidenav.appendChild(li);
@@ -211,11 +180,11 @@ var myCarousel = (function() {
 		if(settings.slidenav) {
 			var buttons = carousel.querySelectorAll('.slidenav button[data-slide]');
 			for (var j = buttons.length - 1; j >= 0; j--) {
-				var thumb = jQuery( '.mm-accessible-slider .slide' ).eq( j ).data( 'thumb' );
+				var thumb = jQuery( '#' + settings.id + ' .slide' ).eq( j ).data( 'thumb' );
 				buttons[j].className = '';
 				buttons[j].innerHTML = '<span class="visuallyhidden">Slide ' + (j+1) + '</span> <img src="' + thumb + '" alt="Slide ' + (j+1) + '">';
 			}
-			var thumb = jQuery( '.mm-accessible-slider .slide' ).eq( new_current ).data( 'thumb' );
+			var thumb = jQuery( '#' + settings.id + ' .slide' ).eq( new_current ).data( 'thumb' );
 			buttons[new_current].className = "current";
 			buttons[new_current].innerHTML = '<span class="visuallyhidden">Slide ' + (new_current+1) + ' (Current Item)</span> <img src="' + thumb + '" alt="Slide ' + (j+1) + '">';
 		}
@@ -262,7 +231,7 @@ var myCarousel = (function() {
 			settings.animate = false;
 			animationSuspended = false;
 			_this = carousel.querySelector('[data-action]');
-			_this.innerHTML = '<span class="visuallyhidden">Play </span><i class="fas fa-play"></i>';
+			_this.innerHTML = '<span class="visuallyhidden">Play </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/play.svg">';
 			_this.setAttribute('data-action', 'start');
 		}
 	}
@@ -273,7 +242,7 @@ var myCarousel = (function() {
 			animationSuspended = false;
 			timer = setTimeout(nextSlide, settings.delay);
 			_this = carousel.querySelector('[data-action]');
-			_this.innerHTML = '<span class="visuallyhidden">Pause </span><i class="fas fa-pause"></i>';
+			_this.innerHTML = '<span class="visuallyhidden">Pause </span><img src="http://aaronb.wpengine.com/wp-content/plugins/mm-accessible-slider/assets/fontawesome/pause.svg">';
 			_this.setAttribute('data-action', 'stop');
 		}
 	}
@@ -295,5 +264,3 @@ var myCarousel = (function() {
 		start:startAnimation
 	};
 });
-var c = new myCarousel();
-c.init( MMAS.settings );
