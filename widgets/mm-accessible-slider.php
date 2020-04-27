@@ -89,16 +89,6 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 		}
 
 		$this->add_control(
-			'post_type',
-			[
-				'label' => __( 'Post Type', 'mm-accessible-slider' ),
-				'type' => Elementor\Controls_Manager::SELECT,
-				'options' => $options,
-				'default' => 'post',
-			]
-		);
-
-		$this->add_control(
 			'content_type',
 			[
 				'label' => __( 'Type of Content', 'mm-accessible-slider' ),
@@ -112,6 +102,31 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 						. '<li>' . __( '<b>All Posts</b> creates a slide for every post entry.', 'mm-accessible-slider' ) . '</li>'
 						. '<li>' . __( '<b>Post Attachments</b> creates a slide for every image attached to a specific post.', 'mm-accessible-slider' ) . '</li>'
 					. '</ul>',
+			]
+		);
+
+		$this->add_control(
+			'post_type',
+			[
+				'label' => __( 'Post Type', 'mm-accessible-slider' ),
+				'type' => Elementor\Controls_Manager::SELECT,
+				'options' => $options,
+				'default' => 'post',
+				'condition' => [
+					'content_type' => 'posts',
+				],
+			]
+		);
+
+		$this->add_control(
+			'post_id',
+			[
+				'label' => __( 'Post ID', 'mm-accessible-slider' ),
+				'type' => Elementor\Controls_Manager::TEXT,
+				'default' => '',
+				'condition' => [
+					'content_type' => 'attachments',
+				],
 			]
 		);
 
@@ -143,10 +158,20 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 							) );
 						}
 
+						if ( 'attachments' == $settings['content_type'] ) {
+							$slides = new WP_Query( array(
+								'post_type' => 'attachment',
+								'post_mime_type' => 'image',
+								'numberposts' => -1,
+								'post_status' => 'any',
+								'post_parent' => $settings['post_id'],
+							) );
+						}
+
 						if ( $slides->have_posts() ) {
 							while ( $slides->have_posts() ) {
 								$slides->the_post();
-								$thumb_id = get_post_thumbnail_id();
+								$thumb_id = ( 'posts' == $settings['content_type'] ) ? get_post_thumbnail_id() : get_the_ID();
 								$thumb_src = wp_get_attachment_image_src( $thumb_id );
 								?>
 								<li class="slide" data-thumb="<?php echo $thumb_src[0]; ?>">
@@ -156,7 +181,7 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 												<h3><?php the_title(); ?></h3>
 											</div>
 											<div class="dyk-image">
-												<?php the_post_thumbnail(); ?>
+												<?php echo wp_get_attachment_image( $thumb_id, 'full' ); ?>
 											</div>
 										</div>
 									</div>
