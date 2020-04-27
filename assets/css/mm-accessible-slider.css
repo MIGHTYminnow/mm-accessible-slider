@@ -305,3 +305,17 @@ body{
 		height: 570px;
 	}
 }
+
+
+.slide img{
+	display: block;
+	margin: auto;
+	max-height: 200px;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+.slide .dyk-info{
+	text-align: center;
+}

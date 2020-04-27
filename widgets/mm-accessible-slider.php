@@ -179,6 +179,9 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 										<div class="dyk">
 											<div class="dyk-info">
 												<h3><?php the_title(); ?></h3>
+												<div>
+													<?php the_content(); ?>
+												</div>
 											</div>
 											<div class="dyk-image">
 												<?php echo wp_get_attachment_image( $thumb_id, 'full' ); ?>
