@@ -178,13 +178,14 @@ var myCarousel = (function() {
 		}
 
 		if(settings.slidenav) {
+			console.log( carousel );
 			var buttons = carousel.querySelectorAll('.slidenav button[data-slide]');
 			for (var j = buttons.length - 1; j >= 0; j--) {
-				var thumb = jQuery( '.mm-accessible-slider .slide' ).eq( j ).data( 'thumb' );
+				var thumb = jQuery( '#' + settings.id + ' .slide' ).eq( j ).data( 'thumb' );
 				buttons[j].className = '';
 				buttons[j].innerHTML = '<span class="visuallyhidden">Slide ' + (j+1) + '</span> <img src="' + thumb + '" alt="Slide ' + (j+1) + '">';
 			}
-			var thumb = jQuery( '.mm-accessible-slider .slide' ).eq( new_current ).data( 'thumb' );
+			var thumb = jQuery( '#' + settings.id + ' .slide' ).eq( new_current ).data( 'thumb' );
 			buttons[new_current].className = "current";
 			buttons[new_current].innerHTML = '<span class="visuallyhidden">Slide ' + (new_current+1) + ' (Current Item)</span> <img src="' + thumb + '" alt="Slide ' + (j+1) + '">';
 		}
@@ -194,7 +195,6 @@ var myCarousel = (function() {
 	}
 
 	function nextSlide(announceItem) {
-		console.log( settings );
 		announceItem = typeof announceItem !== 'undefined' ? announceItem : false;
 
 		var length = slides.length,
