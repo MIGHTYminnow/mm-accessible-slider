@@ -3,7 +3,7 @@
  * Plugin Name: MM Accessible Slider
  * Description: Accessible Slider by MIGHTYminnow
  * Plugin URI:  https://github.com/MIGHTYminnow/mm-accessible-slider
- * Version:     2.0.0-beta
+ * Version:     2.0.0-beta2
  * Author:      MIGHTYminnow
  * Author URI:  https://mightyminnow.com/
  * Text Domain: mm-accessible-slider
@@ -283,7 +283,7 @@ final class MM_Accessible_Slider_Extension {
 	 * @access public
 	 */
 	public function enqueue_styles() {
-		wp_enqueue_style( 'mm-accessible-slider', plugins_url( 'assets/css/mm-accessible-slider.min.css', __FILE__ ), [], '1.0.0' );
+		wp_enqueue_style( 'mm-accessible-slider', plugins_url( 'assets/css/mm-accessible-slider.min.css', __FILE__ ), [], '2.0.0' );
 	}
 
 	/**
@@ -296,7 +296,7 @@ final class MM_Accessible_Slider_Extension {
 	 * @access public
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'mm-accessible-slider', plugins_url( 'assets/js/mm-accessible-slider.min.js', __FILE__ ), [ 'jquery' ], '1.0.0', true );
+		wp_enqueue_script( 'mm-accessible-slider', plugins_url( 'assets/js/mm-accessible-slider.min.js', __FILE__ ), [ 'jquery' ], '2.0.0', true );
 		wp_localize_script( 'mm-accessible-slider', 'MM_Accessible_Slider', [ 'dir_url' => plugin_dir_url( __FILE__ ) ] );
 	}
 
