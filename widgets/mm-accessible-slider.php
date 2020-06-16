@@ -171,8 +171,14 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 						if ( $slides->have_posts() ) {
 							while ( $slides->have_posts() ) {
 								$slides->the_post();
+								$slide_id = get_the_ID();
 								$thumb_id = ( 'posts' == $settings['content_type'] ) ? get_post_thumbnail_id() : get_the_ID();
 								$thumb_src = wp_get_attachment_image_src( $thumb_id );
+								$button_title = get_post_meta( $slide_id, 'mm_accessible_slider_cta_button_title', true );
+								$button_link = get_post_meta( $slide_id, 'mm_accessible_slider_cta_button_link', true );
+								if ( ! $button_link ) {
+									$button_link = '#';
+								}
 								?>
 								<li class="slide" data-thumb="<?php echo $thumb_src[0]; ?>">
 									<div class="wcag-slide">
@@ -180,8 +186,21 @@ class MM_Accessible_Slider_Widget extends \Elementor\Widget_Base {
 											<div class="dyk-info">
 												<h3><?php the_title(); ?></h3>
 												<div>
-													<?php the_content(); ?>
+													<?php
+													if ( 'posts' == $settings['content_type'] ) {
+														the_content();
+													}
+													?>
 												</div>
+												<?php
+												if ( $button_title ) {
+													?>
+													<a class="slide-cta-button" href="<?php echo $button_link; ?>">
+														<?php echo $button_title; ?>
+													</a>
+													<?php
+												}
+												?>
 											</div>
 											<div class="dyk-image">
 												<?php echo wp_get_attachment_image( $thumb_id, 'full' ); ?>

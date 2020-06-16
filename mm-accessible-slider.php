@@ -93,6 +93,9 @@ final class MM_Accessible_Slider_Extension {
 
 		add_action( 'init', [ $this, 'i18n' ] );
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
+		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
+		add_action( 'save_post', [ $this, 'save_meta_boxes' ] );
+		add_action( 'edit_attachment', [ $this, 'save_meta_boxes' ] );
 
 	}
 
@@ -298,6 +301,89 @@ final class MM_Accessible_Slider_Extension {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'mm-accessible-slider', plugins_url( 'assets/js/mm-accessible-slider.min.js', __FILE__ ), [ 'jquery' ], '2.0.0', true );
 		wp_localize_script( 'mm-accessible-slider', 'MM_Accessible_Slider', [ 'dir_url' => plugin_dir_url( __FILE__ ) ] );
+	}
+
+	/**
+	 * Add Meta Boxes
+	 * 
+	 * @since 2.0.0
+	 * 
+	 * @access public
+	 */
+	public function add_meta_boxes() {
+		add_meta_box(
+			'mm_accessible_slider',
+			__( 'MM Accessible Slider', 'mm-accessible-slider' ),
+			[ $this, 'print_meta_boxes' ],
+			null,
+			'side'
+		);
+	}
+
+	/**
+	 * Print Meta Boxes
+	 * 
+	 * @since 2.0.0
+	 * 
+	 * @access public
+	 */
+	public function print_meta_boxes( $post ) {
+		$values = get_post_custom( $post->ID );
+
+		wp_nonce_field( basename( __FILE__ ), 'mm_accessible_slider_metabox_nonce' );
+
+		$cta_button_title = isset( $values['mm_accessible_slider_cta_button_title'] ) ? esc_attr( $values['mm_accessible_slider_cta_button_title'][0] ) : '';
+		?>
+		<p>
+			<label class="post-attributes-label" for="mm_accessible_slider_cta_button_title">CTA Button Title</label>
+			<input type="text" name="mm_accessible_slider_cta_button_title" id="mm_accessible_slider_cta_button_title" value="<?php echo esc_html( $cta_button_title ); ?>">
+		</p>
+		<?php
+
+		$cta_button_link = isset( $values['mm_accessible_slider_cta_button_link'] ) ? esc_attr( $values['mm_accessible_slider_cta_button_link'][0] ) : '';
+		?>
+		<p>
+			<label class="post-attributes-label" for="mm_accessible_slider_cta_button_link">CTA Button Link</label>
+			<input type="text" name="mm_accessible_slider_cta_button_link" id="mm_accessible_slider_cta_button_link" value="<?php echo esc_html( $cta_button_link ); ?>">
+		</p>
+		<?php
+	}
+
+	/**
+	 * Save Meta Boxes
+	 * 
+	 * @since 2.0.0
+	 * 
+	 * @access public
+	 */
+	public function save_meta_boxes( $post_id ) {
+		// Security check
+		if (
+			! isset( $_POST['mm_accessible_slider_metabox_nonce'] ) 
+			|| ! wp_verify_nonce( $_POST['mm_accessible_slider_metabox_nonce'], basename( __FILE__ ) )
+		) {
+			return $post_id;
+		}
+
+		// Check current user permissions
+		if ( ! current_user_can( 'edit_post' ) ) {
+			return $post_id;
+		}
+
+		// Do not save if autosave
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+
+		// Save CTA Button Title
+		if ( isset( $_POST['mm_accessible_slider_cta_button_title'] ) ) {
+			update_post_meta( $post_id, 'mm_accessible_slider_cta_button_title', esc_html( $_POST['mm_accessible_slider_cta_button_title'] ) );
+		}
+
+		// Save CTA Button Link
+		if ( isset( $_POST['mm_accessible_slider_cta_button_link'] ) ) {
+			update_post_meta( $post_id, 'mm_accessible_slider_cta_button_link', esc_html( $_POST['mm_accessible_slider_cta_button_link'] ) );
+		}
 	}
 
 }
