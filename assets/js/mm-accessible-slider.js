@@ -189,6 +189,11 @@ var myCarousel = (function() {
 			new_prev = length-1;
 		}
 
+
+		if ( new_prev < 0 ) {
+			new_prev = 0;
+		}
+
 		for (var i = slides.length - 1; i >= 0; i--) {
 			slides[i].className = "slide";
 		}
