@@ -57,6 +57,9 @@ var myCarousel = (function() {
 	function init(set) {
 		settings = set;
 		carousel = document.getElementById(settings.id);
+		if ( null == carousel ) {
+			return;
+		}
 		slides = carousel.querySelectorAll('.slide');
 
 		carousel.className = 'active carousel';
